@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <string.h>
@@ -39,7 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct line_s - contents of line and corresponding number
+ * struct line - contents of line and corresponding number
  * @contents: array of tokens read from the line
  * @number: the line number
  * Description: contents of a line and corresponding number
@@ -92,7 +93,7 @@ void pint(stack_t **stack, unsigned int nline);
 void nop(stack_t **stack, unsigned int nline);
 void qpush(stack_t **stack, unsigned int nline);
 bool comment_check(line_t line);
-int getline (char **string, size_t *n, FILE *stream);
+/*getline (char **string, size_t *n, FILE *stream);*/
 bool argument_check(char *token);
 
 #endif
