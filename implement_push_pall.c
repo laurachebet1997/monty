@@ -8,17 +8,19 @@
  */
 int main(int argc, char *argv[])
 {
-	FILE **file;
+	FILE *file;
 
-	if(argc != 2 || !isdigit(argv[1]))
+	if(argc != 2)
 	{
-		fprintf(stderr, "USAGE:push interger");
+		fprintf(stderr, "USAGE:push interger\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen("argv[1]", "r");
+	file = fopen(argv[1], "r");
 	if(!file)
 	{
-		printf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS)
+	parsefile(file);
+	return (EXIT_SUCCESS);
+}
